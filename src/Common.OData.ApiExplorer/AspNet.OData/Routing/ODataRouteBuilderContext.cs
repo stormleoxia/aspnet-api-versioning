@@ -52,8 +52,11 @@
 
         internal string? RouteTemplate { get; }
 
+#if WEBAPI
         internal ODataRoute Route { get; }
-
+#else
+        internal IODataRoute Route { get; }
+#endif
         internal ControllerActionDescriptor ActionDescriptor { get; }
 
         internal IEdmEntitySet? EntitySet { get; }

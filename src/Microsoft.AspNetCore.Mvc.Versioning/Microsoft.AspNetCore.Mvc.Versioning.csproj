@@ -14,6 +14,21 @@
   <FrameworkReference Include="Microsoft.AspNetCore.App" />
  </ItemGroup>
 
+ <ItemGroup>
+   <Compile Update="SR.Designer.cs">
+     <DesignTime>True</DesignTime>
+     <AutoGen>True</AutoGen>
+     <DependentUpon>SR.resx</DependentUpon>
+   </Compile>
+ </ItemGroup>
+
+ <ItemGroup>
+   <EmbeddedResource Update="SR.resx">
+     <Generator>ResXFileCodeGenerator</Generator>
+     <LastGenOutput>SR.Designer.cs</LastGenOutput>
+   </EmbeddedResource>
+ </ItemGroup>
+
  <Import Project="..\Common\Common.projitems" Label="Shared" />
  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
 

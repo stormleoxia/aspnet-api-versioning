@@ -120,4 +120,10 @@
   <data name="MissingAnnotation" xml:space="preserve">
     <value>The entity model (EDM) does not have the required {0} annotation.</value>
   </data>
+  <data name="ODataPathNotFound" xml:space="preserve">
+    <value>Request URI '{0}' does not contain OData path '{1}'.</value>
+  </data>
+  <data name="RequestUriTooShortForODataPath" xml:space="preserve">
+    <value>Request URI '{0}' too short to contain OData path '{1}'</value>
+  </data>
 </root>

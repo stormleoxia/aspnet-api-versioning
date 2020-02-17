@@ -1,6 +1,7 @@
 ﻿namespace Microsoft.Extensions.DependencyInjection
 {
     using Microsoft.AspNet.OData.Builder;
+    using Microsoft.AspNet.OData.Extensions;
     using Microsoft.AspNet.OData.Interfaces;
     using Microsoft.AspNet.OData.Routing;
     using Microsoft.AspNetCore.Mvc;
@@ -71,8 +72,10 @@
             services.AddTransient<IApplicationModelProvider, ODataApplicationModelProvider>();
             services.AddTransient<IActionDescriptorProvider, ODataActionDescriptorProvider>();
             services.AddSingleton<IActionDescriptorChangeProvider>( ODataActionDescriptorChangeProvider.Instance );
+            services.AddSingleton<VersionedODataEndpointRouteValueTransformer>();
             services.TryAddEnumerable( Transient<IApiControllerSpecification, ODataControllerSpecification>() );
             services.AddModelConfigurationsAsServices( partManager );
+            services.AddSingleton<IApiVersionRepository, ApiVersionRepository>();
         }
 
         static T GetService<T>( this IServiceCollection services ) => (T) services.LastOrDefault( d => d.ServiceType == typeof( T ) )?.ImplementationInstance!;

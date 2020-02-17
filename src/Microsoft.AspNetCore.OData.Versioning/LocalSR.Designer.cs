@@ -68,5 +68,23 @@ namespace Microsoft {
                 return ResourceManager.GetString("MissingAnnotation", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request URI &apos;{0}&apos; does not contain OData path &apos;{1}&apos;..
+        /// </summary>
+        internal static string ODataPathNotFound {
+            get {
+                return ResourceManager.GetString("ODataPathNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request URI &apos;{0}&apos; too short to contain OData path &apos;{1}&apos;.
+        /// </summary>
+        internal static string RequestUriTooShortForODataPath {
+            get {
+                return ResourceManager.GetString("RequestUriTooShortForODataPath", resourceCulture);
+            }
+        }
     }
 }

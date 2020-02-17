@@ -15,9 +15,22 @@
         /// <param name="route">The mapped <see cref="ODataRoute">OData route</see>.</param>
         /// <param name="apiVersion">The <see cref="ApiVersion">API version</see> associated with the route.</param>
         /// <param name="services">The <see cref="IServiceProvider">services</see> associated with the route.</param>
-        public ODataRouteMapping( ODataRoute route, ApiVersion apiVersion, IServiceProvider services )
+        public ODataRouteMapping( IODataRoute route, ApiVersion apiVersion, IServiceProvider services )
         {
             Route = route;
+            ApiVersion = apiVersion;
+            Services = services;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ODataRouteMapping"/> class.
+        /// </summary>
+        /// <param name="route">The mapped <see cref="ODataRoute">OData route</see>.</param>
+        /// <param name="apiVersion">The <see cref="ApiVersion">API version</see> associated with the route.</param>
+        /// <param name="services">The <see cref="IServiceProvider">services</see> associated with the route.</param>
+        public ODataRouteMapping( ODataRoute route, ApiVersion apiVersion, IServiceProvider services )
+        {
+            Route = new ODataRouteWrapper(route);
             ApiVersion = apiVersion;
             Services = services;
         }
@@ -26,7 +39,7 @@
         /// Gets the mapped OData route.
         /// </summary>
         /// <value>The mapped <see cref="ODataRoute">OData route</see>.</value>
-        public ODataRoute Route { get; }
+        public IODataRoute Route { get; }
 
         /// <summary>
         /// Gets the API version for the route.
