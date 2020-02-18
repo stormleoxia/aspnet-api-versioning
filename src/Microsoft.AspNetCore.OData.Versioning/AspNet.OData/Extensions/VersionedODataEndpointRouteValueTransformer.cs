@@ -25,7 +25,7 @@
     [CLSCompliant(false)]
     public class VersionedODataEndpointRouteValueTransformer : DynamicRouteValueTransformer
     {
-        private readonly IActionSelector selector;
+        private readonly IActionSelector actionSelector;
         private readonly IApiVersionRepository apiVersionRepository;
 
         private static readonly ValueTask<RouteValueDictionary> Empty =
@@ -34,13 +34,13 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="VersionedODataEndpointRouteValueTransformer" /> class.
         /// </summary>
-        /// <param name="selector">The injected IActionSelector.</param>
+        /// <param name="actionSelector">The injected IActionSelector.</param>
         /// <param name="apiVersionRepository">The API version repository.</param>
         public VersionedODataEndpointRouteValueTransformer(
-            IActionSelector selector,
+            IActionSelector actionSelector,
             IApiVersionRepository apiVersionRepository)
         {
-            this.selector = selector;
+            this.actionSelector = actionSelector;
             this.apiVersionRepository = apiVersionRepository;
         }
 
@@ -175,8 +175,8 @@
             odataFeature.RouteName = versionedRouteName;
             odataFeature.IsEndpointRouting = true;
             var context = new RouteContext(httpContext);
-            var candidates = selector.SelectCandidates(context);
-            if (selector.SelectBestCandidate(context, candidates) is
+            var candidates = actionSelector.SelectCandidates(context);
+            if (actionSelector.SelectBestCandidate(context, candidates) is
                 ControllerActionDescriptor actionDescriptor)
             {
                 var result = new RouteValueDictionary();

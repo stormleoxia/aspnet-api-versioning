@@ -204,6 +204,7 @@
             // Can map only once for a given route prefix
             builder.MapDynamicControllerRoute<VersionedODataEndpointRouteValueTransformer>(
                 ODataEndpointPattern.CreateODataEndpointPattern( routeName, routePrefix ) );
+            NotifyRoutesMapped();
             return builder;
         }
 
