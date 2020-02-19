@@ -17,6 +17,7 @@
         /// <param name="apiVersion">The <see cref="ApiVersion">API version</see> associated with the <paramref name="builder"/>.</param>
         public void Apply( ODataModelBuilder builder, ApiVersion apiVersion )
         {
+            var user = builder.EntitySet<Person>( "Users" ).EntityType;
             var person = builder.EntitySet<Person>( "People" ).EntityType;
             var address = builder.EntityType<Address>().HasKey( a => a.Id );
 

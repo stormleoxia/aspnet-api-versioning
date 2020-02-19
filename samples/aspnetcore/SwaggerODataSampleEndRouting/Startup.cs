@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Microsoft.AspNet.OData.Formatter;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Examples.Data;
+using Microsoft.Examples.Models;
 using Microsoft.Net.Http.Headers;
 using Microsoft.OData;
 
@@ -34,6 +36,36 @@ namespace Microsoft.Examples
         /// <param name="services">The collection of services to configure the application with.</param>
         public void ConfigureServices( IServiceCollection services )
         {
+            var repository = new ResourceRepository<Person>();
+            repository.AddRange( new[]
+            {
+                new Person
+                {
+                    Id = 1,
+                    FirstName = "John",
+                    LastName = "Doe",
+                    Email = "john.doe@somewhere.com",
+                    Phone = "555-987-1234",
+                },
+                new Person
+                {
+                    Id = 2,
+                    FirstName = "Bob",
+                    LastName = "Smith",
+                    Email = "bob.smith@somewhere.com",
+                    Phone = "555-654-4321",
+                },
+                new Person
+                {
+                    Id = 3,
+                    FirstName = "Jane",
+                    LastName = "Doe",
+                    Email = "jane.doe@somewhere.com",
+                    Phone = "555-789-3456",
+                }
+            } );
+            services.AddSingleton<IResourceRepository<Person>>( sp => repository );
+
             // the sample application always uses the latest version, but you may want an explicit version such as Version_2_2
             // note: Endpoint Routing is enabled by default; however, it is unsupported by OData and MUST be false
             services.AddMvc( options =>
