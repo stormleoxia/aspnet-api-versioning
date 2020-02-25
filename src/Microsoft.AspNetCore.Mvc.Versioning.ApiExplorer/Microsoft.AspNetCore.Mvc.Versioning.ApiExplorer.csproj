@@ -1,20 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
- <PropertyGroup>
-  <VersionPrefix>4.1.1</VersionPrefix>
-  <AssemblyVersion>4.1.0.0</AssemblyVersion>
-  <TargetFramework>netcoreapp3.1</TargetFramework>
-  <AssemblyTitle>Microsoft ASP.NET Core API Versioning</AssemblyTitle>
-  <Description>ASP.NET Core MVC API explorer functionality for discovering metadata such as the list of API-versioned controllers and actions, and their URLs and allowed HTTP methods.</Description>
-  <RootNamespace>Microsoft.AspNetCore.Mvc.ApiExplorer</RootNamespace>
-  <PackageTags>Microsoft;AspNet;AspNetCore;Versioning;ApiExplorer</PackageTags>
- </PropertyGroup>
-
- <ItemGroup>
-  <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning\Microsoft.AspNetCore.Mvc.Versioning.csproj" />
- </ItemGroup>
-
- <Import Project="..\Shared\Shared.projitems" Label="Shared" />
- <Import Project="..\Common.ApiExplorer\Common.ApiExplorer.projitems" Label="Shared" />
-
+  <PropertyGroup>
+    <VersionPrefix>4.1.1</VersionPrefix>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyTitle>Microsoft ASP.NET Core API Versioning</AssemblyTitle>
+    <Description>ASP.NET Core MVC API explorer functionality for discovering metadata such as the list of API-versioned controllers and actions, and their URLs and allowed HTTP methods.</Description>
+    <RootNamespace>Microsoft.AspNetCore.Mvc.ApiExplorer</RootNamespace>
+    <PackageTags>Microsoft;AspNet;AspNetCore;Versioning;ApiExplorer</PackageTags>
+    <PackageVersion>4.2.0-leoxia</PackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning\Microsoft.AspNetCore.Mvc.Versioning.csproj" />
+  </ItemGroup>
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
+  <Import Project="..\Common.ApiExplorer\Common.ApiExplorer.projitems" Label="Shared" />
 </Project>

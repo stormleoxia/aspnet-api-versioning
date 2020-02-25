@@ -1,44 +1,37 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
- <PropertyGroup>
-  <VersionPrefix>4.1.1</VersionPrefix>
-  <AssemblyVersion>4.1.0.0</AssemblyVersion>
-  <TargetFramework>netcoreapp3.1</TargetFramework>
-  <AssemblyTitle>Microsoft ASP.NET Core API Versioning for OData v4.0</AssemblyTitle>
-  <Description>A service API versioning library for Microsoft ASP.NET Core and OData v4.0.</Description>
-  <RootNamespace>Microsoft</RootNamespace>
-  <PackageTags>Microsoft;AspNet;AspNetCore;OData;Versioning</PackageTags>
- </PropertyGroup>
-
- <ItemGroup>
-  <Compile Include="..\Common.OData.ApiExplorer\AspNet.OData\Routing\*.cs" Link="AspNet.OData\Routing\%(Filename)%(Extension)" />
-  <Compile Include="..\Common.OData.ApiExplorer\OData.Edm\*.cs" Link="OData.Edm\%(Filename)%(Extension)" />
- </ItemGroup>
-
- <ItemGroup>
-  <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning\Microsoft.AspNetCore.Mvc.Versioning.csproj" />
- </ItemGroup>
-
- <ItemGroup>
-  <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.4.0-Nightly202001292116" />
- </ItemGroup>
-
- <ItemGroup>
-   <Compile Update="LocalSR.Designer.cs">
-     <DesignTime>True</DesignTime>
-     <AutoGen>True</AutoGen>
-     <DependentUpon>LocalSR.resx</DependentUpon>
-   </Compile>
- </ItemGroup>
-
- <ItemGroup>
-   <EmbeddedResource Update="LocalSR.resx">
-     <Generator>ResXFileCodeGenerator</Generator>
-     <LastGenOutput>LocalSR.Designer.cs</LastGenOutput>
-   </EmbeddedResource>
- </ItemGroup>
-
- <Import Project="..\Common.OData\Common.OData.projitems" Label="Shared" />
- <Import Project="..\Shared\Shared.projitems" Label="Shared" />
-
+  <PropertyGroup>
+    <VersionPrefix>4.1.1</VersionPrefix>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyTitle>Microsoft ASP.NET Core API Versioning for OData v4.0</AssemblyTitle>
+    <Description>A service API versioning library for Microsoft ASP.NET Core and OData v4.0.</Description>
+    <RootNamespace>Microsoft</RootNamespace>
+    <PackageTags>Microsoft;AspNet;AspNetCore;OData;Versioning</PackageTags>
+    <PackageVersion>4.2.0-leoxia</PackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Common.OData.ApiExplorer\AspNet.OData\Routing\*.cs" Link="AspNet.OData\Routing\%(Filename)%(Extension)" />
+    <Compile Include="..\Common.OData.ApiExplorer\OData.Edm\*.cs" Link="OData.Edm\%(Filename)%(Extension)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning\Microsoft.AspNetCore.Mvc.Versioning.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.4.0-Nightly202001292116" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="LocalSR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LocalSR.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="LocalSR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalSR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\Common.OData\Common.OData.projitems" Label="Shared" />
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
 </Project>

@@ -1,0 +1,10 @@
+{
+    "NuGet":{
+        "Source":"LeoxiaFrance",
+        "ApiKey":{
+            "Database" : "C:\\Seafile\\Private\\Leoxia\\Software.lxdb",
+            "DatabaseKey" : "C:\\Seafile\\Private\\Leoxia\\Software.key",
+            "ApiKeyPath" : "Nuget/LeoxiaUser"
+        }
+    }
+}

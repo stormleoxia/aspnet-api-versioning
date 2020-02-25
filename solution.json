@@ -1,0 +1,11 @@
+{
+  "Projects": [
+    {
+      "Path": "src/**/*.csproj",
+      "HasPackaging": true,
+      "PackagingTypes": [ "NuGet" ],
+      "HasDeployment": true,
+      "DeploymentTypes": [ "NuGet" ]
+    }
+  ]
+}

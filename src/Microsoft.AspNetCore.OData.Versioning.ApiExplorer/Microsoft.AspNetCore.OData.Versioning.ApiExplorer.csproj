@@ -1,30 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
- <PropertyGroup>
-  <VersionPrefix>4.1.1</VersionPrefix>
-  <AssemblyVersion>4.1.0.0</AssemblyVersion>
-  <TargetFramework>netcoreapp3.1</TargetFramework>
-  <AssemblyTitle>Microsoft ASP.NET Core Versioned API Explorer for OData v4.0</AssemblyTitle>
-  <Description>The API Explorer for Microsoft ASP.NET Core and OData v4.0.</Description>
-  <RootNamespace>Microsoft</RootNamespace>
-  <DefineConstants>$(DefineConstants);API_EXPLORER</DefineConstants>
-  <PackageTags>Microsoft;AspNet;AspNetCore;OData;Versioning;ApiExplorer</PackageTags>
- </PropertyGroup>
-
- <ItemGroup>
-  <Compile Include="..\Common.OData\TypeExtensions.cs" Link="AspNet.OData\TypeExtensions.cs" />
- </ItemGroup>
-
- <ItemGroup>
-  <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
- </ItemGroup>
-
- <ItemGroup>
-  <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.csproj" />
-  <ProjectReference Include="..\Microsoft.AspNetCore.OData.Versioning\Microsoft.AspNetCore.OData.Versioning.csproj" />
- </ItemGroup>
-
- <Import Project="..\Common.OData.ApiExplorer\Common.OData.ApiExplorer.projitems" Label="Shared" />
- <Import Project="..\Shared\Shared.projitems" Label="Shared" />
-
+  <PropertyGroup>
+    <VersionPrefix>4.1.1</VersionPrefix>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyTitle>Microsoft ASP.NET Core Versioned API Explorer for OData v4.0</AssemblyTitle>
+    <Description>The API Explorer for Microsoft ASP.NET Core and OData v4.0.</Description>
+    <RootNamespace>Microsoft</RootNamespace>
+    <DefineConstants>$(DefineConstants);API_EXPLORER</DefineConstants>
+    <PackageTags>Microsoft;AspNet;AspNetCore;OData;Versioning;ApiExplorer</PackageTags>
+    <PackageVersion>4.2.0-leoxia</PackageVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\Common.OData\TypeExtensions.cs" Link="AspNet.OData\TypeExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.csproj" />
+    <ProjectReference Include="..\Microsoft.AspNetCore.OData.Versioning\Microsoft.AspNetCore.OData.Versioning.csproj" />
+  </ItemGroup>
+  <Import Project="..\Common.OData.ApiExplorer\Common.OData.ApiExplorer.projitems" Label="Shared" />
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" />
 </Project>
